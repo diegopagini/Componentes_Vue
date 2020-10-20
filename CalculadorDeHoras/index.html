@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Tracker de Cursos</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <div id="app" class="section container">
+
+      <div class="row center">
+        <div class="col s12 m8 center">
+          <h1>Mis Cursos de Platzi💚</h1>
+
+          <p>
+            <input v-model="title" type="text" placeholder="Titulo del curso"/>
+          </p>
+
+          <p>
+            <input v-model="time" type="number" placeholder="Horas"/>
+          </p>
+          <p>
+
+            <button class="btn" v-on:click="addCourse()">Guardar Curso</button>
+          </p>
+        </div>
+      </div>
+
+      <div class="row center">
+        <div class="col s12 m8 center">
+          <div>
+            <h3>Lista de Cursos</h3>
+            <p class="red" v-if="courses.length === 0">Aun no has realizado cursos</p>
+            <div>
+              <ol>
+                <li v-for="course in courses">
+                  Curso: {{ course.title }}, Horas: {{ course.time }}
+                </li>
+              </ol>
+              <hr/>
+              <p>
+                Llevo <strong>{{ totalTime }}</strong> horas aprendiendo en Platzi.
+                <b>#NuncaParesDeAprender 💚</b>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
