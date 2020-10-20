@@ -1,0 +1,16 @@
+body {
+  font-size: 24px;
+}
+
+.row.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  margin-left: 33% !important;
+}
+
+.task {
+  width: 50%;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>To Do List</title>
+  </head>
+  <body>
+    <div id="app" class="row center">
+      <ul class="list col s12 m4 center">
+        <li v-for="todo in todos" v-on:click="removeElement">{{ todo.text }}</li>
+      </ul>
+      <input
+        ref="item"
+        v-model="message"
+        placeholder="Escriba"
+        class="center task"
+      />
+      <button v-on:click="addItem" class="btn waves-effect waves-light">
+        Añadir item
+      </button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
