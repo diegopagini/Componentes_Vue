@@ -16,7 +16,7 @@
   <body>
     
     <div id="app">
-      <button v-on:click="toggleModal">Show Modal</button>
+      <button v-on:click="toggleModal" class="btn">Show Modal</button>
       <modal
         v-on:close-modal="toggleModal"
         v-show="showModal"
